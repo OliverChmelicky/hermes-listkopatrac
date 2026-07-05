@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+"""Executable wrapper so the agent can call ./hermes-search directly.
+
+Equivalent to `python -m hermes_search`. Run from the repo root (which puts
+the `hermes_search` package on the import path).
+"""
+import sys
+
+from hermes_search.cli import main
+
+if __name__ == "__main__":
+    sys.exit(main())
