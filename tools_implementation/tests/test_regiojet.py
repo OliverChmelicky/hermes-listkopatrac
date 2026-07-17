@@ -4,8 +4,8 @@ import threading
 import unittest
 from datetime import date
 
-from hermes_search.model import SearchQuery
-from hermes_search.providers.regiojet import RegioJet
+from tools_implementation.hermes_search.model import SearchQuery
+from tools_implementation.hermes_search.providers.regiojet import RegioJet
 
 FIXTURE = os.path.join(os.path.dirname(__file__), "testdata", "search_response.json")
 

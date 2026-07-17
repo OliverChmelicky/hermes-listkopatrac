@@ -1,9 +1,9 @@
 import unittest
 from datetime import datetime, timezone
 
-from hermes_search import search
-from hermes_search.model import Connection, SearchQuery
-from hermes_search.providers.base import Registry
+from tools_implementation.hermes_search import search
+from tools_implementation.hermes_search.model import Connection, SearchQuery
+from tools_implementation.hermes_search.providers.base import Registry
 
 
 class StubProvider:

@@ -1,0 +1,7 @@
+name: hermes_search
+version: 1.0.0
+description: Travel connection search — RegioJet connections A→B ranked by price in EUR
+author: Oliver Chmelicky
+provides_tools:
+  - search_connections
+provides_hooks: []

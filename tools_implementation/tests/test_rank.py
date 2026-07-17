@@ -1,8 +1,8 @@
 import unittest
 from datetime import datetime, timezone
 
-from hermes_search.model import Connection, Option, SearchQuery
-from hermes_search.rank import rank
+from tools_implementation.hermes_search.model import Connection, Option, SearchQuery
+from tools_implementation.hermes_search.rank import rank
 
 
 def opt(price, bookable, seats, arrive):

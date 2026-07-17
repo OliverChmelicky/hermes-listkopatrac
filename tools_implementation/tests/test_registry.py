@@ -1,7 +1,7 @@
 import unittest
 
-from hermes_search.model import Connection, SearchQuery
-from hermes_search.providers.base import Registry
+from tools_implementation.hermes_search.model import Connection, SearchQuery
+from tools_implementation.hermes_search.providers.base import Registry
 
 
 class StubProvider:
