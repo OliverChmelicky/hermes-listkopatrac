@@ -9,8 +9,8 @@ docker build ....
 RUN:
 
 ```
-docker run -v $PWD/skills:/root/.hermes/skills/ \
-           -v $PWD/<tool>:/root/.hermes/plugins/my-plugin \ # for each tool separate volume?
+docker run -v $PWD/hermes-skills:/root/.hermes/skills/ \
+           -v $PWD/plugins/<tool>:/root/.hermes/plugins/my-plugin \ # for each tool separate volume?
            -v $PWD/config.yaml:/root/.hermes/config.yaml \
            -e MY_PLUGIN_API_KEY=... \
            your-hermes-image
@@ -41,11 +41,12 @@ hermes plugins disable <name>     # remove from allow-list + add to disabled
 
 ### Adding plugin for docker
 ```
-docker run -v $PWD/my-plugin:/root/.hermes/plugins/my-plugin \
+docker run -v $PWD/hermes-skills:/root/.hermes/skills/ \
+           -v $PWD/plugins/<tool>:/root/.hermes/plugins/my-plugin \ # for each tool separate volume?
            -v $PWD/config.yaml:/root/.hermes/config.yaml \
            -e MY_PLUGIN_API_KEY=... \
            your-hermes-image
-```
+````
 
 with config.yaml containing:
 ```
@@ -53,3 +54,10 @@ yamlplugins:
   enabled:
     - my-plugin
 ```    
+
+
+
+# Ideas
+
+1. Automaticky pridavat data sources pre Pravobot
+2. Ocovi zautomatizovat komunikaciu s klientami v AirB&B

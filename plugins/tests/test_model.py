@@ -1,6 +1,6 @@
 import unittest
 
-from tools_implementation.hermes_search.model import (
+from plugins.hermes_search.model import (
     DEFAULT_FROM_LOCATION_ID,
     DEFAULT_RESULT_COUNT,
     DEFAULT_TO_LOCATION_ID,

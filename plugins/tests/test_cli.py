@@ -1,7 +1,7 @@
 import unittest
 from datetime import date, datetime
 
-from tools_implementation.hermes_search.cli import build_parser, build_query
+from plugins.hermes_search.cli import build_parser, build_query
 
 
 class BuildQueryTest(unittest.TestCase):

@@ -1,7 +1,7 @@
 import unittest
 
-from tools_implementation.hermes_search.currency import to_eur, to_eur_all
-from tools_implementation.hermes_search.model import Connection
+from plugins.hermes_search.currency import to_eur, to_eur_all
+from plugins.hermes_search.model import Connection
 
 
 class CurrencyTest(unittest.TestCase):
