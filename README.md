@@ -3,18 +3,24 @@
 BUILD:
 
 ```
-docker build ....
+docker build -t hermes-agent -f dockerfile .
 ```
 
 RUN:
 
 ```
-docker run -v $PWD/hermes-skills:/root/.hermes/skills/ \
+docker run -it \
+           -v $PWD/hermes-skills:/root/.hermes/skills/ \
            -v $PWD/plugins/<tool>:/root/.hermes/plugins/my-plugin \ # for each tool separate volume?
-           -v $PWD/config.yaml:/root/.hermes/config.yaml \
+           -v $PWD/config.yml:/root/.hermes/config.yml \
            -e MY_PLUGIN_API_KEY=... \
-           your-hermes-image
-````
+           hermes-agent
+```
+
+To poke around a running container in another terminal:
+```
+docker exec -it <container-name-or-id> sh
+```
 
 # Add skill to hermes
 
@@ -41,11 +47,12 @@ hermes plugins disable <name>     # remove from allow-list + add to disabled
 
 ### Adding plugin for docker
 ```
-docker run -v $PWD/hermes-skills:/root/.hermes/skills/ \
+docker run -it \
+           -v $PWD/hermes-skills:/root/.hermes/skills/ \
            -v $PWD/plugins/<tool>:/root/.hermes/plugins/my-plugin \ # for each tool separate volume?
-           -v $PWD/config.yaml:/root/.hermes/config.yaml \
+           -v $PWD/config.yml:/root/.hermes/config.yml \
            -e MY_PLUGIN_API_KEY=... \
-           your-hermes-image
+           hermes-agent
 ````
 
 with config.yaml containing:
@@ -61,3 +68,10 @@ yamlplugins:
 
 1. Automaticky pridavat data sources pre Pravobot
 2. Ocovi zautomatizovat komunikaciu s klientami v AirB&B
+
+
+# TODO
+
+1. Run a otestuj skill
+2. Run a otestuj config (telegram, model)
+3. Pouzivaj plugin na vyhladanie spojenia
